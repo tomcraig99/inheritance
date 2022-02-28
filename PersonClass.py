@@ -1,13 +1,13 @@
 class Person:
     def __init__(self, name, address, phone):
-        self.personName = name
-        self.add = address
-        self.telephone = phone
+        self.__personName = name
+        self.__add = address
+        self.__telephone = phone
 
     def print_person(self):
-        print("Name:", self.personName)
-        print("Address:", self.add)
-        print("Phone:", self.telephone)
+        print("Name:", self.__personName)
+        print("Address:", self.__add)
+        print("Phone:", self.__telephone)
 
 
 class Customer(Person):
@@ -18,8 +18,6 @@ class Customer(Person):
         self.__mailList = mail
 
     def print_person(self):
-        print("Name:", self.personName)
-        print("Address:", self.add)
-        print("Phone:", self.telephone)
+        Person.print_person(self)
         print("Customer Number:", self.__number)
         print("Mail List:", self.__mailList)
